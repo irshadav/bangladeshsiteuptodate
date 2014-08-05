@@ -33,6 +33,7 @@ gem 'ancestry'
 gem 'simple_form'
 gem 'foundation-rails'
 gem "pundit"
+gem "paperclip", "~> 4.1"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

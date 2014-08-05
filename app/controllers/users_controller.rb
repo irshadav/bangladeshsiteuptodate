@@ -23,6 +23,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.new(secure_params)
+    respond_to do |format|
+      if @user.save
+        redirect_to @user, notice: 'User was successfully created.'    
+      else
+        redirect_to users_path, :alert => "Unable to update user."       
+      end
+    end
+  end
+
+
   def destroy
     user = User.find(params[:id])
     authorize user
@@ -33,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:role, :first_name, :last_name, :degree_level)
+    params.require(:user).permit(:role, :first_name, :last_name, :degree_level, :avatar)
   end
 
 
