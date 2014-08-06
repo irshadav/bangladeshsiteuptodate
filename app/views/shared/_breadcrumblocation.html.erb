@@ -1,0 +1,5 @@
+<nav class="breadcrumbs">
+	<% for location in @location.ancestors %>
+	  <%= link_to h(location.name), location %>
+	<% end %>
+ </nav>

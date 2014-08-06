@@ -1,0 +1,25 @@
+<div class='latest-post'>
+
+<h1>Latest Post</h1>
+<% @posts.each do |post| %>
+
+
+	<div class="panel">
+
+		<div class="clearfix">
+
+
+		    <p class="right"><%=link_to post.location.try(:name), post.location %></p>
+		    <h2 class="left"><%=link_to post.title, post %></h2>
+		</div>
+	  	<p>
+
+	  	<%= truncate(post.content, :length => 30, :omission => '...')%><%= link_to 'read more', post %> 
+	  	</p>
+	  	<%= post.created_at.strftime("%d %b. %Y")%>
+	</div>
+
+<% end %>
+
+<%= will_paginate @posts %>
+</div>

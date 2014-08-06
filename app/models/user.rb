@@ -21,4 +21,13 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :small => "60x60>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  
+  extend FriendlyId
+  friendly_id :last_name, use: [:slugged, :history]
+
+  def should_generate_new_friendly_id?
+    slug.blank? || last_name_changed?
+  end
+
+
 end

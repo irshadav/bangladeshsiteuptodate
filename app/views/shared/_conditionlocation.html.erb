@@ -1,0 +1,87 @@
+
+
+
+<%if @location.ancestry_depth == 0 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	    <% @location.children.each do |location| %>
+
+			<%= link_to location.name, location%>
+
+	    <% end %>
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+<%elsif @location.ancestry_depth == 1 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	    <% @location.children.each do |location| %>
+
+			<%= location.name%>
+
+	    <% end %>
+
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+<%elsif @location.ancestry_depth == 2 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	    <% @location.children.each do |location| %>
+
+			<%= location.name%>
+
+	    <% end %>
+
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+<%elsif @location.ancestry_depth == 3 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	    <% @location.children.each do |location| %>
+
+			<%= link_to location.name%>
+
+	    <% end %>
+
+
+				    <div id="block_left"></div>
+	</div>
+<%elsif @location.ancestry_depth == 4 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	4
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+<%elsif @location.ancestry_depth == 5 %>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	5
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+
+<%else%>
+	<div class="l w-230">
+		<div class="p-b10 m-t10 sidebar">
+		
+	6
+
+			</div>
+	    <div id="block_left"></div>
+	</div>
+<%end%>
+

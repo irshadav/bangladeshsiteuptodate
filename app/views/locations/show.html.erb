@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%=render partial: "shared/breadcrumblocation", locals: {tab: @location}%>
+
+
+
+
+<%=render partial: "shared/conditionlocation", locals: {tab: @location}%>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @location.body %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

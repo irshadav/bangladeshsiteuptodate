@@ -1,0 +1,19 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :content %>
+
+    <%= f.select :location_id, Location.all.at_depth(1).collect {|p| [ p.name, p.id ] }, {include_blank: false}, :class => 'form-control' %>
+
+
+
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

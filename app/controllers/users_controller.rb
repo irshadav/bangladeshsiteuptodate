@@ -9,9 +9,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    
+    @user = User.friendly.find(params[:id])
+     if request.path != user_path(@user)
+        redirect_to @user, status: :moved_permanently
+      end
   end
+  
 
   def update
     @user = User.find(params[:id])
